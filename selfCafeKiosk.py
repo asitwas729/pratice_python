@@ -1,25 +1,22 @@
 bank = 5000
-ame = [1, "아메리카노", 3000]
-rat = [2, "카페라떼", 3500]
-cino = [3, "카푸치노", 4000]
+menus = [
+    [1, "ame", "아메리카노", 3000],
+    [2, "rat", "카페라떼", 3500],
+    [3, "cino", "카푸치노", 4000]
+]
 # 메뉴 출력
-print("1. ", ame[1])
-print("2. ", rat[1])
-print("3. ", cino[1])
+for m in menus:
+    print(f"{m[0]}. {m[2]} {m[3]}원")
 # 메뉴 입력
-cho = input()
+cho = input("주문할 번호 : ")
 
 # 메뉴 저장
-if(cho == "1"):
-    menu = ame
-    print("아메리카노 3000원")
-elif(cho == "2"):
-    print("카페라떼 3500원")
-elif(cho == "3"):
-    print("카푸치노 4000원")
-else :
-    print("Error")
+for m in menus:
+    if cho == str(m[0]):
+        print(f"{m[2]}를 선택하셨습니다.")
+        print(f"결제금액은 {m[3]}원 입니다.")
+        break
 # 결제
 print("결제중입니다.")
-bank -= menu[2]
-print("남은 돈 : ", bank)
+bank -= menus[int(cho)-1][3]
+print(f"잔액 : {bank}")
