@@ -23,7 +23,7 @@ class AccountValid:
         for acc in accounts:
             if acc["user_account_number"] == account_number and acc["user_password"] == password :
                 print("로그인 되었습니다.")
-                return True
+                return acc
         print("로그인 실패")
         return False
 class Banking:

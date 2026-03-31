@@ -27,3 +27,7 @@ class Account:
     
     def deposit(self, amount):
         self.balance += amount
+
+x = 10
+print(f"{x=}", end="")
+print("Hi")
